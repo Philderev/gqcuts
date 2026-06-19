@@ -518,6 +518,15 @@ body {
         gap: 4rem;
     }
 
+    /* book.html: show the embed form first, then "What to expect" below it on mobile */
+    .booking-grid-wrapper > .services-info {
+        order: 2;
+    }
+
+    .booking-grid-wrapper > .booking-container {
+        order: 1;
+    }
+
     .hours-grid-wrapper {
         grid-template-columns: 1fr;
         gap: 4rem;
@@ -858,8 +867,13 @@ body {
 .rating-summary .stars {
     display: flex;
     align-items: center;
+    gap: 2px;
     margin-bottom: 0;
-    font-size: 1.8rem;
+}
+
+.rating-summary .stars svg {
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .rating-link {
@@ -870,13 +884,6 @@ body {
 
 .rating-link:hover {
     color: var(--red);
-}
-.star-half {
-    background: linear-gradient(90deg, var(--google-yellow) 50%, var(--gray) 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    line-height: 1;
 }
 
 @media (max-width: 768px) {
@@ -1248,6 +1255,17 @@ body {
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
+
+/* "Meet the Barbers" photos only (about.html full grid + index.html owners preview) —
+   uses aspect-ratio instead of a fixed pixel height so the photo stays a proper
+   portrait rectangle at any screen width, instead of stretching wide/squarish
+   on large screens. Scoped to .barbers-grid so services.html's cards (which
+   reuse the .barber-img class) are completely unaffected. */
+.barbers-grid .barber-img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+}
+
 
 .barber-card:hover .barber-img {
     filter: grayscale(0%);
