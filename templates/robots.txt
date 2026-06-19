@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Prevent search engines from indexing success/confirmation pages
+Disallow: /confirmation.html
+Disallow: /thank-you.html
+
+# Link to your sitemap (update the domain once live)
+Sitemap: https://gqbarbershop.com/sitemap.xml
