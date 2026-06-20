@@ -1,4 +1,4 @@
-// Cookie consent banner for GQ Barbershop.
+// Cookie consent banner for GQ Cuts Barbershop.
 // Shows once per visitor; remembers their choice in localStorage so it
 // doesn't reappear on every page/visit once they've responded.
 (function () {

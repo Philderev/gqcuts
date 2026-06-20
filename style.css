@@ -265,6 +265,23 @@ body {
     align-items: stretch;
 }
 
+/* book.html only: stack the embed form above "What to expect" at every
+   screen width (desktop included), instead of the default side-by-side grid. */
+.book-grid-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.book-grid-wrapper > .booking-container {
+    order: 1;
+}
+
+.book-grid-wrapper > .services-info {
+    order: 2;
+}
+
 .contact-left-column {
     display: flex;
     flex-direction: column;
@@ -518,15 +535,6 @@ body {
         gap: 4rem;
     }
 
-    /* book.html: show the embed form first, then "What to expect" below it on mobile */
-    .booking-grid-wrapper > .services-info {
-        order: 2;
-    }
-
-    .booking-grid-wrapper > .booking-container {
-        order: 1;
-    }
-
     .hours-grid-wrapper {
         grid-template-columns: 1fr;
         gap: 4rem;
@@ -575,11 +583,12 @@ body {
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
     .service-card {
+        flex: 1 1 100%;
+        max-width: 100%;
         padding: 2rem 1.5rem;
     }
 }
@@ -1176,14 +1185,17 @@ body {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-card {
+    flex: 1 1 300px;
+    max-width: 380px;
     background-color: var(--charcoal);
     padding: 3rem;
     border: 1px solid var(--black);
@@ -1228,14 +1240,17 @@ body {
 }
 
 .barbers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 3rem;
     max-width: 1200px;
     margin: 4rem auto 0;
 }
 
 .barber-card {
+    flex: 1 1 280px;
+    max-width: 340px;
     background-color: var(--charcoal);
     padding: 2rem;
     border-top: 4px solid var(--red);
@@ -1294,8 +1309,9 @@ body {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     max-width: 1200px;
     margin: 4rem auto 0;
@@ -1308,6 +1324,8 @@ body {
     aspect-ratio: 1 / 1;
     border: 1px solid var(--charcoal);
     cursor: pointer;
+    flex: 1 1 300px;
+    max-width: 340px;
 }
 
 .gallery-img {
@@ -1427,11 +1445,12 @@ body {
     }
 
     .services-grid {
-        grid-template-columns: 1fr !important;
         gap: 2rem !important;
     }
 
     .service-card {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
         padding: 2.5rem 1.5rem !important;
     }
 

@@ -6,4 +6,4 @@ Disallow: /confirmation.html
 Disallow: /thank-you.html
 
 # Link to your sitemap (update the domain once live)
-Sitemap: https://gqbarbershop.com/sitemap.xml
+Sitemap: https://gqcutsbarbershop.com/sitemap.xml
